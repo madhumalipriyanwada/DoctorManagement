@@ -1,7 +1,6 @@
 package com.paf.DoctorManagement;
 
 import java.util.List;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -25,7 +24,7 @@ public class DoctorResource {
 	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 	public List<Doctor> getDoctor() {
 		
-		System.out.println("getDoctor called...");
+		System.out.println("View Doctors Successfully...");
 		return repo.getDoctor();
 	}
 	
@@ -37,6 +36,7 @@ public class DoctorResource {
 	
 	public Doctor getDoctor(@PathParam("id") int id) {
 		
+		System.out.println("View Doctor Successfully...");
 		return repo.getDoctor(id);
 	}
 	
@@ -49,6 +49,7 @@ public class DoctorResource {
 		System.out.println(a1);
 		repo.create(a1);
 		
+		System.out.println("Add Doctor Successfully...");
 		return a1;
 	}
 	
@@ -69,6 +70,7 @@ public class DoctorResource {
 		{
 			
 			repo.update(a1);
+			System.out.println("Update Doctor Successfully...");
 		}
 		
 		return a1;
@@ -84,6 +86,7 @@ public class DoctorResource {
 		
 		if(a.getID()!=0) {
 			repo.delete(ID);
+			System.out.println("Delete Doctor Successfully...");
 		}
 		return a;
 	}

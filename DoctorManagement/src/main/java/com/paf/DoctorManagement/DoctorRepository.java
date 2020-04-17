@@ -21,7 +21,7 @@ public class DoctorRepository {
 				// Connect to Database
 				Class.forName("com.mysql.jdbc.Driver");
 				con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3308/DocManagement","root","");
-				System.out.println("Successfully Connected");
+				System.out.println("Database Successfully Connected");
 		}
 		catch(Exception e) {
 			
@@ -30,10 +30,11 @@ public class DoctorRepository {
 	}
 	
 	
+	//View all Added Doctors from Database
 	public List<Doctor> getDoctor() {
 		
 		List<Doctor> doctors = new ArrayList<>(); 
-		String sql = "select * from DoctorTb"; //View all Added Doctors from Database
+		String sql = "select * from DoctorTb"; 
 		
 		try {
 			
@@ -68,9 +69,10 @@ public class DoctorRepository {
 	}
 	
 	
+	// View Doctor Using Id
 	public Doctor getDoctor(int ID) {
 		
-		String sql = "select * from DoctorTb where ID ="+ID; // View Doctor Using Id
+		String sql = "select * from DoctorTb where ID ="+ID; 
 		
 		Doctor a = new Doctor();
 		try {
@@ -102,9 +104,10 @@ public class DoctorRepository {
 	}
 
 
+	//Insert Doctors details to Database
 	public void create(Doctor a1) {
 		
-		String sql = "insert into DoctorTb value(?,?,?,?,?,?,?,?,?,?,?,?)"; //Insert Doctors details to Database
+		String sql = "insert into DoctorTb value(?,?,?,?,?,?,?,?,?,?,?,?)"; 
 		
 		try {
 			
@@ -131,10 +134,10 @@ public class DoctorRepository {
 	}
 
 
-
+	//Update Doctor details
 	public void update(Doctor a1) {
 		
-		//Update Doctor details 
+	
 		String sql = "update DoctorTb set Name=?,Age=?,DateofBirth=?,ContactNo=?,Email=?,Address=?,NIC=?,Gender=?,Specialization=?,RegHospital=?,JoinDate=? where ID=?";
 		try {
 			
@@ -162,10 +165,10 @@ public class DoctorRepository {
 	}
 
 
-
+	//Delete Doctor details from Database
 	public void delete(int ID) {
 		
-		String sql = "delete from DoctorTb where ID=?"; //Delete Doctor details from Database
+		String sql = "delete from DoctorTb where ID=?"; 
 		
 		try {
 			
