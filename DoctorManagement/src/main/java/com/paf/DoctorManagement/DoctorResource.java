@@ -35,7 +35,7 @@ public class DoctorResource {
 	@Path("doctor/{id}")
 	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 	
-	public Doctor getAlien(@PathParam("id") int id) {
+	public Doctor getDoctor(@PathParam("id") int id) {
 		
 		return repo.getDoctor(id);
 	}
@@ -45,7 +45,7 @@ public class DoctorResource {
 	@POST
 	@Path("doctor")
 	@Consumes({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
-	public Doctor CreateAlien(Doctor a1) {
+	public Doctor CreateDoctor(Doctor a1) {
 		System.out.println(a1);
 		repo.create(a1);
 		
