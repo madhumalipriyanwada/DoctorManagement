@@ -1,7 +1,5 @@
 package com.paf.DoctorManagement;
 
-//import java.util.Date;
-
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -20,6 +18,8 @@ public class Doctor {
 	private String RegHospital;
 	private String JoinDate;
 	
+	
+	//Add Getters and Setters
 	
 	public int getID() {
 		return ID;
@@ -93,6 +93,7 @@ public class Doctor {
 	public void setJoinDate(String joinDate) {
 		JoinDate = joinDate;
 	}
+	
 	@Override
 	public String toString() {
 		return "Doctor [ID=" + ID + ", Name=" + Name + ", Age=" + Age + ", DateofBirth=" + DateofBirth + ", ContactNo="
