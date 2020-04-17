@@ -12,11 +12,13 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.PathParam;
 
+//set path
 @Path("doctors")
 public class DoctorResource {
 
 	DoctorRepository repo = new DoctorRepository();
 	
+	//get doctors
 	@GET
 	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 	public List<Doctor> getDoctor() {
@@ -26,6 +28,7 @@ public class DoctorResource {
 		return repo.getDoctor();
 	}
 	
+	//get doctors using ID 
 	@GET
 	@Path("doctor/{id}")
 	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
